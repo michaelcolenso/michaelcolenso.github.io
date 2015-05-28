@@ -6,7 +6,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Hi.
 baseurl: "/" # the subpath of your site, e.g. /blog/
 url: "http://blog.michaelcolenso.com/" # the base hostname & protocol for your site
-logourl: /assets/images/logo.png # Site logo
+logourl: /assets/images/sf-logo.png # Site logo
 author: "michaelcolenso"
 author_thumbnail: "/assets/images/michaelcolenso.png" # Author avatar
 # Theme customization - please change from the defaults!
