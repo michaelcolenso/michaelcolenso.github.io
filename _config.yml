@@ -12,7 +12,8 @@ author_thumbnail: "/assets/images/michaelcolenso.png" # Author avatar
 # Theme customization - please change from the defaults!
 theme:
   # Color for sidebar bar, links, etc
-  highlight_color: "#E33258" #205081" # "#272935"
+  sidebar_color: "#E33258"
+  highlight_color: "#170409"
   # Social media links, leave blank to ignore
   social:
     github: michaelcolenso
