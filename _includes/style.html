@@ -3,14 +3,14 @@
 <style type="text/css">
 {% capture include_to_scssify %}
 {% if site.theme.highlight_color && site.theme.highlight_color != '' %}
-a, .post-title a { color: {{ site.theme.highlight_color }};}
+a, .post-title a { color: {{ site.theme.idebar_color }};}
 
 a:hover { border-bottom-color: {{ site.theme.highlight_color }};}
-.sidebar { background-color: {{ site.theme.sidebar_color }};}
+.sidebar { background-color: {{ site.theme.highlight_color }};}
 
 .wc-top, .sidebar-toggle:active,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: {{ site.theme.sidebar_color }};
+  background-color: {{ site.theme.highlight_color }};
 }
 
 .sidebar a:hover, .sidebar .sidebar-nav a   {
