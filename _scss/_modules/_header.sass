@@ -6,46 +6,20 @@
 
   @media (max-width: $screen-xs)
     margin-bottom: 0
-    
+
   .header-logo,
   .header-navigation,
   .header-social
     +type(30)
     @extend %type-heading
     line-height: $line-height-base
-  
-    
+
+
   .header-logo
-    margin-top: 0
-    @extend %type-body
-    text-align: left
-    &:after
-      content: '.org'
-      position: relative
-      opacity: .8
-      transition: all 1s ease-in
-    &:hover:after
-      opacity: 0
-    &:before
-      content: 'michael'
-      position: relative
-      opacity: 0
-      transform: perspective( 600px ) rotateX(120deg)
-      transition: all 1s ease-in-out
-    &:hover:before
-      opacity: .8
-      transform: translateX(0px) perspective (0)
-      color: $color-abel
-    a
-      color: $color-abel
-      &:hover
-        color: $color-almostblack
-    @media (max-width: $screen-xs-max)
-      &:before
-        display: none
+    margin-top: -30px
 
 
-        
+
   .header-navigation
     @include center-block()
     text-align: center
@@ -61,9 +35,9 @@
       transition: all .4s ease-in-out
       &:hover
         opacity: 1
-        
-        
-  .header-social  
+
+
+  .header-social
     a
       color: $color-almostblack
       opacity: .4
@@ -71,6 +45,6 @@
       &:hover
         opacity: 1
     @media (max-width: $screen-xs)
-      display: none  
+      display: none
     @media (max-width: 667px)
       display: none
