@@ -1,3 +1,9 @@
+*, *:before, *:after
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+  
 body
   background: $base-background-color
   color: $base-text-color
@@ -6,7 +12,7 @@ body
 
 .wrapper
   padding: 1%
-  
+
 h1, h2, h3, h4, h5, h6
   font-weight: normal
   font-family: inherit
@@ -26,6 +32,9 @@ a
   &:hover
     text-decoration: none
 
+a.active
+  text-decoration: underline
+
 // hide flash of unstyled text
 html
   body
@@ -38,4 +47,3 @@ html
   a
     min-width: 100px
     max-width: 100px
-    

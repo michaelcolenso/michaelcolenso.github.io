@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>{{ page.title }}</title>
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Latin+Modern+Mono:400/Libre+Caslon+Display:400">
         <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -20,18 +19,17 @@
             <div class="header navbar">
                 <div class="container">
                   <div class="row">
+                    <div class="flexnav">
+                        <div class="brand">
+                          <h5 class="header-logo"><a href="/"><img class="" height="60" width="60" src="/assets/mike-logo.png" /></a></h5>
+                        </div>
+                        <div class="navigation">
+                            {% include navigation.html %}
+                        </div>
 
-                    <div class="col-md-2">
-                      <h5 class="header-logo"><a href="/"><img class="" height="60" width="60" src="/assets/mike-logo.png" /></a></h5>
-                    </div>
-
-
-                    <div class="col-md-6">
-                        {% include navigation.html %}
-                    </div>
-
-                    <div class="col-md-4">
-                        {% include social.html %}
+                        <div class="social">
+                            {% include social.html %}
+                        </div>
                     </div>
 
                   </div>
@@ -46,6 +44,16 @@
               {% endif %}
             </div>
         </div>
+
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script>
+        $(".header-navigation li a").on("click", function(){
+           $(".header-navigation").find(".active").removeClass("active");
+           $(this).parent().addClass("active");
+        });
+        </script>
+
 
     </body>
 </html>

@@ -1,11 +1,20 @@
 .header
-  margin-bottom: 2em
-  padding-top: 2em
-  @media (max-width: 667px)
-    padding-top: .5em
+  margin-bottom: 1em
+  padding-top: 1em
 
-  @media (max-width: $screen-xs)
-    margin-bottom: 0
+  .flexnav
+    display: flex
+    align-items: center
+    width: 100%
+    margin: 0 auto
+
+    .brand
+      flex: 0.5
+    .navigation
+      flex: 1
+      padding-right: 10%
+    .social
+      flex: 0.5 0.5
 
   .header-logo,
   .header-navigation,
@@ -16,15 +25,14 @@
 
 
   .header-logo
-    margin-top: -30px
+    margin-top: -10px
 
 
 
   .header-navigation
-    // @include center-block()
-    // text-align: center
+    text-align: right
     @media (max-width: $screen-xs)
-      float: right
+      font-size: 1.2em
     .selected
       border-bottom: 2px solid $color-abel
       &:hover
@@ -45,6 +53,4 @@
       &:hover
         opacity: 1
     @media (max-width: $screen-xs)
-      display: none
     @media (max-width: 667px)
-      display: none
