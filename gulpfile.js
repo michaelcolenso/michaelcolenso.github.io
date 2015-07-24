@@ -38,13 +38,13 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
-//gulp.task('sass', function () {
-    //return sass('_scss/**/*') 
-    //.on('error', function (err) {
-      //console.error('Error!', err.message);
-   //})
-    //.pipe(gulp.dest('_site/css'));
-//});
+gulp.task('sass', function () {
+    return sass('_scss/**/*')
+    .on('error', function (err) {
+      console.error('Error!', err.message);
+   })
+    .pipe(gulp.dest('_site/assets/css'));
+});
 
 /**
  * Watch scss files for changes & recompile
