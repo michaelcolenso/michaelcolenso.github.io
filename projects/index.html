@@ -4,21 +4,22 @@ layout: default
 permalink: /projects/
 ---
 
-<div class="col-md-2">
+<div class="col-sm-2">
   <div class="sidebar">
     <p>{% include tagline.html %}</p>
   </div>
 </div>
-<div class="col-md-offset-1 col-md-9">
+<div class="col-md-10">
 
   <div class="projects">
-    <h2>I make fancy maps.</h2>
+    <h2>Here Be Dragons</h2>
+    <p class="lead">amateur cartography with javascript</p>
     <div class="row">
       {% for project in site.projects %}
-            <div class="col-md-6 col-sm-6">
+            <div class="col-sm-5">
               <a href="{{project.url}}" class="project">
                 <div class="project-image">
-                  <img class="img-responsive" src="{{project.image}}" title="{{ project.title }}" %}
+                  <img class="img-responsive" src="{{project.image}}" title="{{ project.title }}" %} />
                   <div class="project-tagline">{{ project.tagline }}</div>
                 </div>
                 <h2 class="project-title">{{ project.title }}</h2>
