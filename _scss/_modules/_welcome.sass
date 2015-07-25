@@ -13,13 +13,11 @@
 
   @extend %type-base
   .welcome-hero
-    +type(160)
+    +type(140)
     +line-height(8)
-    width: 90%
+    width: 95%
     margin: 0 auto
     text-align: left
-    @media (max-width: $screen-sm)
-      +type(90)
     .idiot
       +type(14)
     .genius
@@ -30,12 +28,17 @@
     .light
       color: $color-almostblack
       opacity: .3
-      +type(2)
+      +type(4)
       transition: all .5s linear
-      &:last-child
-        +type(2)
-      @media (max-width: $screen-sm)
-        +type(4)
+
+    @media (max-width: $screen-md)
+      +type(120)
+      +line-height(10)
+    @media (max-width: $screen-sm)
+      +type(80)
+      +line-height(16)
+    @media (max-width: $screen-xs)
+      +line-height(10)
 
   a
     text-decoration: none
