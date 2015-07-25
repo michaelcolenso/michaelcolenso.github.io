@@ -5,16 +5,15 @@
   .flexnav
     display: flex
     align-items: center
-    width: 100%
+    width: 80%
     margin: 0 auto
 
     .brand
-      flex: 0.5
+      flex: .5 0 70px
     .navigation
-      flex: 1
-      padding-right: 10%
+      flex: 1 1 auto
     .social
-      flex: 0.5 0.5
+      flex: 1 .7 132px
 
   .header-logo,
   .header-navigation,
@@ -25,15 +24,16 @@
   .header-logo
     margin-top: 0px
     padding-left: 30px
-    
-    @media (max-width: $screen-xs
+
+    @media (max-width: $screen-xs)
       padding-left: 0px
 
 
   .header-navigation
-    text-align: right
+    text-align: center
     @media (max-width: $screen-xs)
-      font-size: 1.2em
+      font-size: 1em
+      text-align: right
     .selected
       border-bottom: 2px solid $color-abel
       &:hover
