@@ -1,3 +1,9 @@
+---
+svg-icons:
+ - title: mike-logo
+   url: /
+   class: mike
+---
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,11 +23,12 @@
 
         <div class="wrapper">
             <div class="header navbar">
-                <div class="container">
+                <div class="container-fluid">
                   <div class="row">
                     <div class="flexnav">
                         <div class="brand">
-                          <h5 class="header-logo"><a href="/"><img class="" height="60" width="60" src="/assets/mike-logo.png" /></a></h5>
+                           {% include svg-icons/mike-logo.svg %}
+                          <!-- <h5 class="header-logo"><a href="/"><img class="" height="60" width="60" src="/assets/mike-logo.png" /></a></h5> -->
                         </div>
                         <div class="navigation">
                             {% include navigation.html %}
