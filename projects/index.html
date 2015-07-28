@@ -9,14 +9,14 @@ permalink: /projects/
     <p>{% include tagline.html %}</p>
   </div>
 </div>
-<div class="col-md-10">
+<div class="col-md-offset-1 col-md-9">
 
   <div class="projects">
     <h2>Here Be Dragons</h2>
     <p class="lead">amateur cartography with javascript</p>
     <div class="row">
       {% for project in site.projects %}
-            <div class="col-sm-5">
+            <div class="col-md-6">
               <a href="{{project.url}}" class="project">
                 <div class="project-image">
                   <img class="img-responsive" src="{{project.image}}" title="{{ project.title }}" %} />
