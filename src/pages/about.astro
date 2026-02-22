@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const experience = [
+  {
+    company: 'SODO Builders',
+    href: 'http://sodobuilders.net',
+    role: 'Project Manager',
+    dates: 'Jan 2016 – present',
+    logo: '/assets/sodologo.png',
+    description: 'Coordinate construction activities for a hospitality high-rise project in downtown Seattle.',
+  },
+  {
+    company: 'Cloudmunch',
+    href: 'http://go.cloudmunch.com',
+    role: 'Senior Software Engineer',
+    dates: 'Apr 2015 – Jan 2016',
+    logo: '/assets/logo_cloudmunch.png',
+    description: 'Facilitate cloudmunching at scale.',
+  },
+  {
+    company: 'Adonit',
+    href: 'http://adonit.net',
+    role: 'Web Developer',
+    dates: 'Mar 2014 – Mar 2015',
+    location: 'Austin (100% Remote)',
+    logo: '/assets/adonit-logo.png',
+    description: 'Front-end engineer for Adonit. Engaged member of a cross-functional agile team using Sass, CoffeeScript, MongoDB to build web experiences.',
+  },
+  {
+    company: 'Crispin Porter + Bogusky',
+    href: 'http://www.cpbgroup.com/',
+    role: 'Interactive Developer',
+    dates: '2013 – 2014',
+    location: 'Los Angeles',
+    logo: '/assets/cpb-logo.png',
+    description: "Built digital work for the world's biggest brands. Maintained large consumer-facing web applications using modern full-stack technologies.",
+  },
+  {
+    company: 'Team Coco Digital',
+    href: 'http://www.teamcoco.com',
+    role: 'Web Developer',
+    dates: '2013',
+    location: 'Burbank',
+    logo: '/assets/cocologo.png',
+    description: 'Developed features and experiences for teamcoco.com, web home of Conan O\'Brien\'s TBS late-night show.',
+  },
+  {
+    company: 'University of Southern California',
+    href: 'http://ortho.usc.edu',
+    role: 'Web Developer',
+    dates: '2013',
+    location: 'Los Angeles (Contract)',
+    logo: '/assets/usclogo.png',
+    description: 'Maintained USC sites. Developed a custom HTML email template enabling an editorial team to transition from print to digital distribution.',
+  },
+  {
+    company: 'Lunchbox',
+    href: 'http://www.lbox.com',
+    role: 'Interactive Developer',
+    dates: '2012 – 2013',
+    location: 'Los Angeles',
+    logo: '/assets/lunchbox-logo.png',
+    description: 'Built interactive experiences for major retail brands using HTML5, CSS3, JavaScript, and MongoDB.',
+  },
+  {
+    company: 'Swordfight Media',
+    href: 'http://michaelcolenso.com',
+    role: 'Freelance Consultant / Developer / Designer',
+    dates: '2012 – present',
+    location: 'Seattle / LA',
+    logo: '/assets/sf-logo.png',
+    description: 'UX/UI and software development consulting for startups, agencies, and independent design professionals.',
+  },
+];
+---
+<BaseLayout
+  title="About — Michael Colenso"
+  description="Michael Colenso is a software engineer with 10+ years of experience building things for the web."
+>
+  <div class="page-content">
+    <h1 class="page-title">Michael Colenso</h1>
+    <p class="page-subtitle">Engineer</p>
+
+    <p class="about-intro">
+      Dedicated and enthusiastic software engineer with a genuine desire to learn from others
+      and develop effective solutions to hard problems. Ambitious autodidact who brings over
+      10 years of prior professional experience as a construction engineer and project manager —
+      having delivered over $100M of complex commercial construction projects.
+    </p>
+
+    <h2 class="section-label">Experience</h2>
+
+    <ul class="experience-list">
+      {experience.map(({ company, href, role, dates, location, logo, description }) => (
+        <li class="experience-item">
+          <a href={href} target="_blank" rel="noopener noreferrer" style="display:block">
+            <img class="experience-logo" src={logo} alt={`${company} logo`} loading="lazy" />
+          </a>
+          <div class="experience-meta">
+            <span class="experience-company">
+              <a href={href} target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">{company}</a>
+            </span>
+            <span class="experience-role">{role}</span>
+            <span class="experience-dates">{dates}{location ? ` · ${location}` : ''}</span>
+            <p class="experience-description">{description}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>
