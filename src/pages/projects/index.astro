@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
+);
+---
+<BaseLayout
+  title="Projects — Michael Colenso"
+  description="Interactive data visualizations and web projects by Michael Colenso."
+>
+  <div class="page-content">
+    <h1 class="page-title">Here Be Dragons</h1>
+    <p class="page-subtitle">amateur cartography with javascript</p>
+
+    <ul class="projects-grid">
+      {projects.map((project) => (
+        <li>
+          <a href={`/projects/${project.slug}`} class="project-card">
+            <div class="project-card-img">
+              <img
+                src={project.data.image}
+                alt={project.data.title}
+                loading="lazy"
+              />
+              <div class="project-card-overlay">
+                <p>{project.data.tagline}</p>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <h2 class="project-card-title">{project.data.title}</h2>
+              <p class="project-card-tagline">{project.data.tagline}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

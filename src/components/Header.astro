@@ -1,0 +1,46 @@
+---
+const navLinks = [
+  { href: '/about', label: 'who' },
+  { href: '/projects', label: 'what' },
+  { href: '/blog', label: 'words' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/michaelcolenso', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/michaelcolenso', label: 'LinkedIn' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<header class="site-header">
+  <div class="inner">
+    <div class="site-logo">
+      <a href="/">mc<span>.</span></a>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <ul class="site-nav">
+        {navLinks.map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              aria-current={currentPath.startsWith(href) ? 'page' : undefined}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <ul class="site-social" aria-label="Social links">
+      {socialLinks.map(({ href, label }) => (
+        <li>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
