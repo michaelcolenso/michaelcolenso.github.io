@@ -4,10 +4,11 @@ tagline: "Interactive map of all items obtained by US law enforcement via the DO
 link: "http://police-militarization-map.herokuapp.com/"
 github: "https://github.com/michaelcolenso/1033-Program-Map"
 image: "/assets/guns.png"
-order: 1
+order: 7
 ---
 
 ## Warfighter → Crimefighter
+
 #### Mapping the 1033 Program
 
 During the summer of 2014, the "militarization of the police" was a widely discussed topic in the United States. The acronym "MRAP" (Mine Resistant Armored Personnel carrier) rumbled into the public lexicon as some Americans began to discuss why their local sheriff's department or state police barracks might need such heavy-duty Materiel fresh off a foreign battlefield.
@@ -22,6 +23,6 @@ Analyzing the data and making something useful with it was a delightful challeng
 
 ### Do things and tell people
 
-The final result was fairly well received by a tiny portion of the internet, and I was handsomely rewarded with some fruitful discussion and loads of magic internet points, which are probably my primary source of motivation*.
+The final result was fairly well received by a tiny portion of the internet, and I was handsomely rewarded with some fruitful discussion and loads of magic internet points, which are probably my primary source of motivation\*.
 
-*besides money, the chance to leave the world a better place, and unbridled curiosity.
+\*besides money, the chance to leave the world a better place, and unbridled curiosity.
