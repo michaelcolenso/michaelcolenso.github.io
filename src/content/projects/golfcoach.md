@@ -3,7 +3,7 @@ title: "GolfCoach"
 tagline: "AI-powered swing analysis — real-time feedback, biomechanical insights, and personalized coaching"
 github: "https://github.com/michaelcolenso/golfcoach"
 link: "https://golfcoach.vercel.app"
-image: "/assets/golfcoach.png"
+image: "/assets/golfcoach.jpg"
 order: 6
 ---
 

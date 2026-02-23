@@ -2,7 +2,7 @@
 title: "Praised"
 tagline: "Testimonial collection and display SaaS — beautiful forms, embeddable widget, Stripe billing"
 github: "https://github.com/michaelcolenso/Praised"
-image: "/assets/praised.png"
+image: "/assets/praised.jpg"
 order: 2
 ---
 

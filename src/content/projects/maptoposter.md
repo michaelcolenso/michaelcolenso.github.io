@@ -2,7 +2,7 @@
 title: "Map to Poster"
 tagline: "Generate minimalist city map posters for any city in the world, in a dozen visual styles"
 github: "https://github.com/michaelcolenso/maptoposter"
-image: "/assets/maptoposter.png"
+image: "/assets/maptoposter.jpg"
 order: 5
 ---
 

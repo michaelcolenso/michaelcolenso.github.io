@@ -2,7 +2,7 @@
 title: "Refract"
 tagline: "Drop a photo into a repo — AI critics from three different models tear it apart, an editor fixes it, and the result publishes itself"
 github: "https://github.com/michaelcolenso/Refract"
-image: "/assets/refract.png"
+image: "/assets/refract.jpg"
 order: 3
 ---
 

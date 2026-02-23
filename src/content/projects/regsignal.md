@@ -2,7 +2,7 @@
 title: "RegSignal"
 tagline: "Tracks how construction regulations propagate from Federal law down to local enforcement — and when they'll cost you money"
 github: "https://github.com/michaelcolenso/rip"
-image: "/assets/regsignal.png"
+image: "/assets/regsignal.jpg"
 order: 1
 ---
 

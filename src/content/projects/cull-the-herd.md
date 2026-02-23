@@ -2,7 +2,7 @@
 title: "Cull the Herd"
 tagline: "AI-powered CLI that scores hundreds of photos so you don't have to — composition, lighting, subject, technical quality"
 github: "https://github.com/michaelcolenso/cull-the-herd"
-image: "/assets/cull-the-herd.png"
+image: "/assets/cull-the-herd.jpg"
 order: 4
 ---
 
