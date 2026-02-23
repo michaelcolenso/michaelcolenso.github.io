@@ -8,11 +8,11 @@ const projects = (await getCollection('projects')).sort(
 ---
 <BaseLayout
   title="Projects — Michael Colenso"
-  description="Interactive data visualizations and web projects by Michael Colenso."
+  description="Projects by Michael Colenso — regulatory intelligence, AI tools, data visualizations, and more."
 >
   <div class="page-content">
     <h1 class="page-title">Here Be Dragons</h1>
-    <p class="page-subtitle">amateur cartography with javascript</p>
+    <p class="page-subtitle">tools, maps, and other acts of curiosity</p>
 
     <ul class="projects-grid">
       {projects.map((project) => (
