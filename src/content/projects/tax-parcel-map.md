@@ -4,10 +4,11 @@ tagline: "Interactive property records and tax parcel map for Traverse City, Mic
 link: "http://tcplatmap.herokuapp.com"
 github: "https://github.com/michaelcolenso/tcplatmap"
 image: "/assets/tax-parcel-map.png"
-order: 3
+order: 9
 ---
 
 ## TC Plat Map
+
 #### An interactive plat map for Traverse City, Michigan
 
 A moderately exciting local property records and tax parcel map for Traverse City, Michigan.

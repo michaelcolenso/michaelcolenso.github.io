@@ -3,90 +3,93 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const experience = [
   {
+    company: 'STS Construction',
+    href: 'https://stsconstruction.com',
+    role: 'Project Manager',
+    dates: '2022 – 2024',
+    location: 'Seattle, WA',
+    description: 'Led on-site construction team to successfully complete a 58-unit, 8-story podium-style multifamily project. Developed and enforced safety protocols, achieving zero incidents throughout all project phases.',
+  },
+  {
+    company: 'Toth Construction',
+    href: 'https://tothconstruction.com',
+    role: 'Project Manager',
+    dates: '2020 – 2022',
+    location: 'Seattle, WA',
+    description: 'Managed high-end residential construction projects, coordinating subcontractors and vendors to deliver luxury built environments. Cultivated relationships with ultra-high-net-worth clients, world-class design professionals, and master artisans.',
+  },
+  {
+    company: 'Osborne Construction',
+    href: 'https://osborneconstruction.com',
+    role: 'Project Manager',
+    dates: '2018 – 2019',
+    location: 'Redmond, WA',
+    description: 'Provided stakeholders with detailed monthly cost reports and cash flow projections. Managed multiple scope changes; prepared, negotiated, and executed owner change orders and subcontract modifications.',
+  },
+  {
+    company: 'Discovery Land Company',
+    href: 'https://discoveryland.com',
+    role: 'Project Manager',
+    dates: '2017 – 2018',
+    location: 'Abaco, Bahamas',
+    description: 'Oversaw construction of multiple luxury homes in a private development. Managed all project phases across international borders, resolving logistics challenges related to timely material procurement on a remote island site.',
+  },
+  {
     company: 'SODO Builders',
     href: 'http://sodobuilders.net',
     role: 'Project Manager',
-    dates: 'Jan 2016 – present',
+    dates: '2016 – 2017',
+    location: 'Seattle, WA',
     logo: '/assets/sodologo.png',
-    description: 'Coordinate construction activities for a hospitality high-rise project in downtown Seattle.',
+    description: 'Supervised a high-rise hospitality and office construction project, meeting aggressive timelines and budget targets. Implemented value-engineered solutions, reducing costs by 12% without compromising quality.',
   },
   {
-    company: 'Cloudmunch',
-    href: 'http://go.cloudmunch.com',
-    role: 'Senior Software Engineer',
-    dates: 'Apr 2015 – Jan 2016',
-    logo: '/assets/logo_cloudmunch.png',
-    description: 'Facilitate cloudmunching at scale.',
+    company: 'Cloudmunch / Adonit / Team Coco',
+    href: 'https://github.com/michaelcolenso',
+    role: 'Senior Software Engineer → Web Developer',
+    dates: '2012 – 2015',
+    location: 'Los Angeles, CA & Seattle, WA',
+    description: 'Self-taught programming skills leading to significant contributions in professional software teams. Advanced to Senior Software Engineer at a cloud services startup, driving product development and scaling solutions.',
   },
   {
-    company: 'Adonit',
-    href: 'http://adonit.net',
-    role: 'Web Developer',
-    dates: 'Mar 2014 – Mar 2015',
-    location: 'Austin (100% Remote)',
-    logo: '/assets/adonit-logo.png',
-    description: 'Front-end engineer for Adonit. Engaged member of a cross-functional agile team using Sass, CoffeeScript, MongoDB to build web experiences.',
+    company: 'Graham Construction',
+    href: 'https://grahamconstruction.com',
+    role: 'Project Engineer',
+    dates: '2007 – 2011',
+    location: 'Seattle, WA',
+    description: 'Managed over $50M in contracted scope, completing two projects in 18 months for a single owner. Executed complex projects in education, retail, hospitality, and seismic retrofit sectors.',
   },
   {
-    company: 'Crispin Porter + Bogusky',
-    href: 'http://www.cpbgroup.com/',
-    role: 'Interactive Developer',
-    dates: '2013 – 2014',
-    location: 'Los Angeles',
-    logo: '/assets/cpb-logo.png',
-    description: "Built digital work for the world's biggest brands. Maintained large consumer-facing web applications using modern full-stack technologies.",
+    company: 'Skender Construction',
+    href: 'https://skender.com',
+    role: 'Project Engineer',
+    dates: '2006 – 2007',
+    location: 'Chicago, IL',
+    description: 'Developed scopes of work and negotiated subcontracts for a senior care facility project. Monitored project progress, ensuring adherence to key milestones and objectives.',
   },
   {
-    company: 'Team Coco Digital',
-    href: 'http://www.teamcoco.com',
-    role: 'Web Developer',
-    dates: '2013',
-    location: 'Burbank',
-    logo: '/assets/cocologo.png',
-    description: 'Developed features and experiences for teamcoco.com, web home of Conan O\'Brien\'s TBS late-night show.',
-  },
-  {
-    company: 'University of Southern California',
-    href: 'http://ortho.usc.edu',
-    role: 'Web Developer',
-    dates: '2013',
-    location: 'Los Angeles (Contract)',
-    logo: '/assets/usclogo.png',
-    description: 'Maintained USC sites. Developed a custom HTML email template enabling an editorial team to transition from print to digital distribution.',
-  },
-  {
-    company: 'Lunchbox',
-    href: 'http://www.lbox.com',
-    role: 'Interactive Developer',
-    dates: '2012 – 2013',
-    location: 'Los Angeles',
-    logo: '/assets/lunchbox-logo.png',
-    description: 'Built interactive experiences for major retail brands using HTML5, CSS3, JavaScript, and MongoDB.',
-  },
-  {
-    company: 'Swordfight Media',
-    href: 'http://michaelcolenso.com',
-    role: 'Freelance Consultant / Developer / Designer',
-    dates: '2012 – present',
-    location: 'Seattle / LA',
-    logo: '/assets/sf-logo.png',
-    description: 'UX/UI and software development consulting for startups, agencies, and independent design professionals.',
+    company: 'West Builders',
+    href: 'https://westbuilders.com',
+    role: 'Field Engineer',
+    dates: '2004 – 2006',
+    location: 'Los Angeles, CA',
+    description: 'Controlled project costs and monitored progress on complex high-stakes projects. Managed procurement, change analysis, and document control.',
   },
 ];
 ---
 <BaseLayout
   title="About — Michael Colenso"
-  description="Michael Colenso is a software engineer with 10+ years of experience building things for the web."
+  description="Michael Colenso is a construction project manager with 20+ years of experience delivering complex commercial projects."
 >
   <div class="page-content">
     <h1 class="page-title">Michael Colenso</h1>
-    <p class="page-subtitle">Engineer</p>
+    <p class="page-subtitle">Construction Project Manager</p>
 
     <p class="about-intro">
-      Dedicated and enthusiastic software engineer with a genuine desire to learn from others
-      and develop effective solutions to hard problems. Ambitious autodidact who brings over
-      10 years of prior professional experience as a construction engineer and project manager —
-      having delivered over $100M of complex commercial construction projects.
+      Results-driven construction project manager with 20+ years delivering complex commercial
+      projects across multifamily, hospitality, healthcare, and historic renovation sectors —
+      with a track record of completing projects ahead of schedule and under budget. Former
+      software engineer; comfortable at the intersection of construction and technology.
     </p>
 
     <h2 class="section-label">Experience</h2>
@@ -94,9 +97,13 @@ const experience = [
     <ul class="experience-list">
       {experience.map(({ company, href, role, dates, location, logo, description }) => (
         <li class="experience-item">
-          <a href={href} target="_blank" rel="noopener noreferrer" style="display:block">
-            <img class="experience-logo" src={logo} alt={`${company} logo`} loading="lazy" />
-          </a>
+          {logo ? (
+            <a href={href} target="_blank" rel="noopener noreferrer" style="display:block">
+              <img class="experience-logo" src={logo} alt={`${company} logo`} loading="lazy" />
+            </a>
+          ) : (
+            <div class="experience-logo-placeholder" />
+          )}
           <div class="experience-meta">
             <span class="experience-company">
               <a href={href} target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit">{company}</a>
@@ -108,5 +115,8 @@ const experience = [
         </li>
       ))}
     </ul>
+
+    <h2 class="section-label">Education</h2>
+    <p class="about-intro">B.S. Construction Management — Northern Michigan University, 2004</p>
   </div>
 </BaseLayout>
