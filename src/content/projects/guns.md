@@ -1,6 +1,6 @@
 ---
 title: "Warfighter to Crimefighter"
-tagline: "Interactive map of all items obtained by US law enforcement via the DOD 1033 Program"
+tagline: "A county-level map of US law enforcement equipment obtained through the DOD 1033 Program."
 link: "http://police-militarization-map.herokuapp.com/"
 github: "https://github.com/michaelcolenso/1033-Program-Map"
 image: "/assets/guns.png"
@@ -13,7 +13,7 @@ order: 7
 
 During the summer of 2014, the "militarization of the police" was a widely discussed topic in the United States. The acronym "MRAP" (Mine Resistant Armored Personnel carrier) rumbled into the public lexicon as some Americans began to discuss why their local sheriff's department or state police barracks might need such heavy-duty Materiel fresh off a foreign battlefield.
 
-### It takes a muckraker
+### Public data into public context
 
 When the New York Times open-sourced the raw data related to the 1033 Program, which is intended to facilitate the transfer of surplus military equipment from the Department of Defense to local law enforcement agencies in the US, I was motivated to explore the data and create something.
 

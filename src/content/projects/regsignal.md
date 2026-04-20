@@ -1,6 +1,6 @@
 ---
 title: "RegSignal"
-tagline: "Tracks how construction regulations propagate from Federal law down to local enforcement — and when they'll cost you money"
+tagline: "Regulatory intelligence for tracking how construction rules move from federal publication to local enforcement."
 github: "https://github.com/michaelcolenso/rip"
 image: "/assets/regsignal.jpg"
 order: 1
@@ -8,7 +8,7 @@ order: 1
 
 ## Federal Signal. Local Revenue.
 
-Construction professionals face financial losses when regulations become locally enforceable — not when they're published federally. Existing policy-tracking tools completely miss this propagation timeline.
+Construction professionals face financial losses when regulations become locally enforceable — not when they're published federally. Most policy-tracking tools do not model that propagation timeline.
 
 RegSignal is a regulatory intelligence platform that connects the dots: Federal Register entries → state building code updates → city council adoption → local enforcement dates.
 
