@@ -1,19 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
----
-<BaseLayout title="Michael Colenso">
-  <div class="page-content">
-    <section class="hero">
-      <p class="hero-tagline">
-        Twenty years delivering complex construction projects. A decade writing software. Currently exploring what happens when you're fluent in
-        <a href="https://github.com/michaelcolenso" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">both.</a>
-      </p>
+import { getCollection } from 'astro:content';
+import { contactCopy, operatingProof, selectedProjectNotes, selectedProjectSlugs } from '../data/site';
 
-      <ul class="hero-links">
-        <li><a href="/about">who is this person →</a></li>
-        <li><a href="/projects">stuff they built →</a></li>
-        <li><a href="/blog">things they wrote →</a></li>
-      </ul>
+const projects = await getCollection('projects');
+const selectedProjects = selectedProjectSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is NonNullable<typeof project> => Boolean(project));
+---
+<BaseLayout
+  title="Michael Colenso — Construction, Software, AI"
+  description="Michael Colenso is a construction operator, software builder, and AI pragmatist."
+  bodyClass="home"
+>
+  <div class="page-shell page-shell--home">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Construction operator / software builder / AI pragmatist</p>
+          <h1 class="hero-title">Complex work deserves better tools.</h1>
+          <p class="hero-copy">
+            Twenty years delivering construction projects. Four years writing software professionally.
+            Now applying both to the parts of construction where judgment, risk, and information collide.
+          </p>
+        </div>
+
+        <aside class="proof-panel" aria-label="Operating proof">
+          <dl>
+            {operatingProof.map((item) => (
+              <div>
+                <dt>{item.label}</dt>
+                <dd>{item.detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">The arc</p>
+          <h2 class="section-title">Built work. Built software. Back to work that lasts.</h2>
+        </div>
+        <div class="section-body content-narrow">
+          <p>
+            The recession created the space to learn software. The work stuck because systems,
+            constraints, and execution were familiar territory. Construction pulled me back because
+            built work remains visible after the launch window closes.
+          </p>
+          <p>
+            The useful edge now is not treating AI as theater. It is applying software and model
+            workflows to construction problems where timing, risk, documentation, and local judgment matter.
+          </p>
+          <a class="text-link" href="/about">Read the background</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Selected work</p>
+          <h2 class="section-title">Proof in systems, not slogans.</h2>
+        </div>
+        <div class="selected-work">
+          {selectedProjects.map((project) => (
+            <article class="work-item">
+              <div>
+                <p class="project-type">{project.data.title}</p>
+              </div>
+              <div>
+                <h3><a href={`/projects/${project.slug}`}>{project.data.title}</a></h3>
+                <p>{selectedProjectNotes[project.slug]}</p>
+              </div>
+            </article>
+          ))}
+          <a class="button-link" href="/projects">View the full archive</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-grid">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title">{contactCopy.heading}</h2>
+        </div>
+        <div class="section-body content-narrow">
+          <p>{contactCopy.body}</p>
+          <a class="button-link" href={contactCopy.href} target="_blank" rel="noopener noreferrer">
+            {contactCopy.label}
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </BaseLayout>
