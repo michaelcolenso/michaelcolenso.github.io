@@ -2,6 +2,7 @@ _site
 .idea
 node_modules
 .sass_cache
+.sass-cache
 dist
 .astro
 .worktrees/
