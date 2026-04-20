@@ -1,6 +1,7 @@
 ---
 title: "I bought my domain to post my resume. It cost me four years."
 date: 2026-02-23
+tagline: "A recession, a website, a software detour, and the pull of work that lasts."
 ---
 
 In 2010, during the kind of recession that gives construction project managers time to think, I bought michaelcolenso.com. The plan was a resume site. Professional. Evidence I existed.
