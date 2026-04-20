@@ -5,6 +5,8 @@ import { projectGroups } from '../../data/site';
 
 const projects = await getCollection('projects');
 const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
+const slugifyId = (value: string) =>
+  value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 ---
 <BaseLayout
   title="Work — Michael Colenso"
@@ -21,11 +23,11 @@ const projectBySlug = new Map(projects.map((project) => [project.slug, project])
 
     <div class="project-groups">
       {projectGroups.map((group) => (
-        <section class="section" aria-labelledby={`${group.title}-heading`}>
+        <section class="section" aria-labelledby={`${slugifyId(group.title)}-heading`}>
           <div class="section-grid">
             <div>
               <p class="section-kicker">Archive</p>
-              <h2 id={`${group.title}-heading`} class="section-title">{group.title}</h2>
+              <h2 id={`${slugifyId(group.title)}-heading`} class="section-title">{group.title}</h2>
               <p class="section-lede">{group.description}</p>
             </div>
             <div class="selected-work">
