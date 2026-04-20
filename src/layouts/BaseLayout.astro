@@ -6,9 +6,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  bodyClass?: string;
 }
 
-const { title, description = 'Michael Colenso — software engineer, maker, and enthusiastic participant.' } = Astro.props;
+const {
+  title,
+  description = 'Michael Colenso is a construction operator, software builder, and AI pragmatist.',
+  bodyClass = '',
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
@@ -21,11 +26,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#F10C49" />
+    <meta name="theme-color" content="#334c3f" />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class={bodyClass}>
     <Header />
     <main>
       <slot />
