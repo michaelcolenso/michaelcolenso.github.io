@@ -17,6 +17,7 @@ const formattedDate = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  timeZone: 'UTC',
 });
 ---
 <BaseLayout title={`${post.data.title} — Michael Colenso`} description={post.data.tagline ?? 'Writing by Michael Colenso.'}>
