@@ -1,40 +1,53 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { projectGroups } from '../../data/site';
 
-const projects = (await getCollection('projects')).sort(
-  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99)
-);
+const projects = await getCollection('projects');
+const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
 ---
 <BaseLayout
-  title="Projects — Michael Colenso"
-  description="Projects by Michael Colenso — regulatory intelligence, AI tools, data visualizations, and more."
+  title="Work — Michael Colenso"
+  description="Projects by Michael Colenso across construction data, AI automation, maps, and product builds."
 >
-  <div class="page-content">
-    <h1 class="page-title">Here Be Dragons</h1>
-    <p class="page-subtitle">tools, maps, and other acts of curiosity</p>
+  <div class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">Work</p>
+      <h1 class="page-title">Tools, maps, products, and experiments.</h1>
+      <p class="page-intro">
+        A working archive of software projects, with the construction and AI-adjacent work pulled into clearer focus.
+      </p>
+    </header>
 
-    <ul class="projects-grid">
-      {projects.map((project) => (
-        <li>
-          <a href={`/projects/${project.slug}`} class="project-card">
-            <div class="project-card-img">
-              <img
-                src={project.data.image}
-                alt={project.data.title}
-                loading="lazy"
-              />
-              <div class="project-card-overlay">
-                <p>{project.data.tagline}</p>
-              </div>
+    <div class="project-groups">
+      {projectGroups.map((group) => (
+        <section class="section" aria-labelledby={`${group.title}-heading`}>
+          <div class="section-grid">
+            <div>
+              <p class="section-kicker">Archive</p>
+              <h2 id={`${group.title}-heading`} class="section-title">{group.title}</h2>
+              <p class="section-lede">{group.description}</p>
             </div>
-            <div class="project-card-body">
-              <h2 class="project-card-title">{project.data.title}</h2>
-              <p class="project-card-tagline">{project.data.tagline}</p>
+            <div class="selected-work">
+              {group.slugs.map((slug) => {
+                const project = projectBySlug.get(slug);
+                if (!project) return null;
+                return (
+                  <article class="project-row">
+                    <div>
+                      <img class="project-image" src={project.data.image} alt="" loading="lazy" />
+                    </div>
+                    <div>
+                      <h2><a href={`/projects/${project.slug}`}>{project.data.title}</a></h2>
+                      <p>{project.data.tagline}</p>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
-          </a>
-        </li>
+          </div>
+        </section>
       ))}
-    </ul>
+    </div>
   </div>
 </BaseLayout>

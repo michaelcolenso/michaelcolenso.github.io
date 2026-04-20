@@ -14,38 +14,35 @@ const { project } = Astro.props;
 const { Content } = await project.render();
 ---
 <BaseLayout title={`${project.data.title} — Michael Colenso`} description={project.data.tagline}>
-  <div class="page-content">
-    <h1 class="page-title">{project.data.title}</h1>
-    <p class="page-subtitle">{project.data.tagline}</p>
+  <div class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow"><a href="/projects">Work</a></p>
+      <h1 class="page-title">{project.data.title}</h1>
+      <p class="page-intro">{project.data.tagline}</p>
 
-    <ul class="project-links">
-      {project.data.link && (
-        <li>
-          <a href={project.data.link} target="_blank" rel="noopener noreferrer">
-            ↗ live project
-          </a>
-        </li>
-      )}
-      {project.data.github && (
-        <li>
-          <a href={project.data.github} target="_blank" rel="noopener noreferrer">
-            ↗ source code
-          </a>
-        </li>
-      )}
-      <li><a href="/projects">← all projects</a></li>
-    </ul>
+      <ul class="project-link-list">
+        {project.data.link && (
+          <li>
+            <a href={project.data.link} target="_blank" rel="noopener noreferrer">Live project</a>
+          </li>
+        )}
+        {project.data.github && (
+          <li>
+            <a href={project.data.github} target="_blank" rel="noopener noreferrer">Source code</a>
+          </li>
+        )}
+        <li><a href="/projects">All work</a></li>
+      </ul>
+    </header>
 
-    {project.data.image && (
-      <img
-        src={project.data.image}
-        alt={project.data.title}
-        style="width:100%;border-radius:4px;margin-bottom:2rem;"
-      />
-    )}
+    <section class="section">
+      <img class="project-image" src={project.data.image} alt="" />
+    </section>
 
-    <div class="prose">
-      <Content />
-    </div>
+    <section class="section">
+      <div class="prose">
+        <Content />
+      </div>
+    </section>
   </div>
 </BaseLayout>
