@@ -50,7 +50,15 @@ const requiredText = new Map([
 ]);
 
 function localAssetFromUrl(value) {
-  if (!value || value.startsWith('http://') || value.startsWith('https://')) {
+  if (!value) {
+    return null;
+  }
+
+  if (
+    value.startsWith('http://') ||
+    value.startsWith('https://') ||
+    value.startsWith('//')
+  ) {
     return null;
   }
 
@@ -63,7 +71,24 @@ function localAssetFromUrl(value) {
     return null;
   }
 
-  return value.startsWith('/assets/') ? value : null;
+  if (!value.startsWith('/')) {
+    return null;
+  }
+
+  const pathname = value.replace(/[?#].*$/, '');
+  if (pathname.startsWith('/_astro/')) {
+    return null;
+  }
+  if (pathname === '/' || pathname.endsWith('/')) {
+    return null;
+  }
+
+  const name = pathname.split('/').pop() ?? '';
+  if (!name.includes('.')) {
+    return null;
+  }
+
+  return pathname;
 }
 
 function collectLocalAssetRefs(html) {
