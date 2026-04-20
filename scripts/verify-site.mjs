@@ -79,12 +79,7 @@ function localAssetFromUrl(value) {
   if (pathname.startsWith('/_astro/')) {
     return null;
   }
-  if (pathname === '/' || pathname.endsWith('/')) {
-    return null;
-  }
-
-  const name = pathname.split('/').pop() ?? '';
-  if (!name.includes('.')) {
+  if (pathname === '/') {
     return null;
   }
 
@@ -93,26 +88,25 @@ function localAssetFromUrl(value) {
 
 function collectLocalAssetRefs(html) {
   const refs = new Set();
-  const attrPattern = /\b(?:src|href)\s*=\s*(["'])(.*?)\1|\bsrcset\s*=\s*(["'])(.*?)\3/gi;
+  const tagPattern = /<(link|img|source|script|audio|video|iframe)\b([^>]*)>/gi;
+  const attrPattern = /\b(?:src|href|srcset)\s*=\s*(["'])(.*?)\1/gi;
 
-  for (const match of html.matchAll(attrPattern)) {
-    const directValue = match[2];
-    if (directValue) {
-      const ref = localAssetFromUrl(directValue);
-      if (ref) {
-        refs.add(ref);
+  for (const tagMatch of html.matchAll(tagPattern)) {
+    const attrs = tagMatch[2];
+    for (const attrMatch of attrs.matchAll(attrPattern)) {
+      const value = attrMatch[2];
+      if (attrMatch[0].startsWith('srcset=')) {
+        for (const candidate of value.split(',')) {
+          const url = candidate.trim().split(/\s+/)[0];
+          const ref = localAssetFromUrl(url);
+          if (ref) {
+            refs.add(ref);
+          }
+        }
+        continue;
       }
-      continue;
-    }
 
-    const srcsetValue = match[4];
-    if (!srcsetValue) {
-      continue;
-    }
-
-    for (const candidate of srcsetValue.split(',')) {
-      const url = candidate.trim().split(/\s+/)[0];
-      const ref = localAssetFromUrl(url);
+      const ref = localAssetFromUrl(value);
       if (ref) {
         refs.add(ref);
       }
