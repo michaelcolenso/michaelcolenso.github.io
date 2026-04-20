@@ -49,6 +49,16 @@ const requiredText = new Map([
   ]],
 ]);
 
+const knownRouteHrefs = new Set(
+  requiredFiles.map((file) => {
+    if (file === 'index.html') {
+      return '/';
+    }
+
+    return `/${file.replace(/\/index\.html$/, '')}`.replace(/\/$/, '');
+  })
+);
+
 function localAssetFromUrl(value) {
   if (!value) {
     return null;
@@ -86,30 +96,45 @@ function localAssetFromUrl(value) {
   return pathname;
 }
 
+function isKnownRouteHref(pathname) {
+  return (
+    knownRouteHrefs.has(pathname) ||
+    knownRouteHrefs.has(pathname.replace(/\/$/, '')) ||
+    knownRouteHrefs.has(`${pathname}/`)
+  );
+}
+
 function collectLocalAssetRefs(html) {
   const refs = new Set();
-  const tagPattern = /<(link|img|source|script|audio|video|iframe)\b([^>]*)>/gi;
-  const attrPattern = /\b(?:src|href|srcset)\s*=\s*(["'])(.*?)\1/gi;
+  const attrPattern = /\b(src|href|srcset)\s*=\s*(["'])(.*?)\2/gi;
 
-  for (const tagMatch of html.matchAll(tagPattern)) {
-    const attrs = tagMatch[2];
-    for (const attrMatch of attrs.matchAll(attrPattern)) {
-      const value = attrMatch[2];
-      if (attrMatch[0].startsWith('srcset=')) {
-        for (const candidate of value.split(',')) {
-          const url = candidate.trim().split(/\s+/)[0];
-          const ref = localAssetFromUrl(url);
-          if (ref) {
-            refs.add(ref);
-          }
-        }
+  for (const match of html.matchAll(attrPattern)) {
+    const attribute = match[1];
+    const value = match[3];
+
+    if (attribute === 'href') {
+      const ref = localAssetFromUrl(value);
+      if (!ref || isKnownRouteHref(ref)) {
         continue;
       }
+      refs.add(ref);
+      continue;
+    }
 
-      const ref = localAssetFromUrl(value);
-      if (ref) {
-        refs.add(ref);
+    if (attribute === 'srcset') {
+      for (const candidate of value.split(',')) {
+        const url = candidate.trim().split(/\s+/)[0];
+        const ref = localAssetFromUrl(url);
+        if (ref) {
+          refs.add(ref);
+        }
       }
+      continue;
+    }
+
+    const ref = localAssetFromUrl(value);
+    if (ref) {
+      refs.add(ref);
     }
   }
 
