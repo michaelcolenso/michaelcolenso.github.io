@@ -5,6 +5,8 @@ import { projectGroups } from '../../data/site';
 
 const projects = await getCollection('projects');
 const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
+const groupedSlugs = new Set(projectGroups.flatMap((group) => group.slugs));
+const ungroupedProjects = projects.filter((project) => !groupedSlugs.has(project.slug));
 const slugifyId = (value: string) =>
   value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 ---
@@ -50,6 +52,31 @@ const slugifyId = (value: string) =>
           </div>
         </section>
       ))}
+
+      {ungroupedProjects.length > 0 && (
+        <section class="section" aria-labelledby="more-work-heading">
+          <div class="section-grid">
+            <div>
+              <p class="section-kicker">Archive</p>
+              <h2 id="more-work-heading" class="section-title">More Work</h2>
+              <p class="section-lede">Projects not yet sorted into the main archive groups.</p>
+            </div>
+            <div class="selected-work">
+              {ungroupedProjects.map((project) => (
+                <article class="project-row">
+                  <div>
+                    <img class="project-image" src={project.data.image} alt="" loading="lazy" width="1600" height="1000" />
+                  </div>
+                  <div>
+                    <h3><a href={`/projects/${project.slug}`}>{project.data.title}</a></h3>
+                    <p>{project.data.tagline}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </div>
   </div>
 </BaseLayout>

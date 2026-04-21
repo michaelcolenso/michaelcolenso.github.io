@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #f4f0e7;
-  --paper: #fbfaf6;
+  --bg: #e7ece8;
+  --paper: #f7faf8;
   --ink: #1f2420;
-  --muted: #5f665f;
-  --faint: #8c928a;
-  --line: #c9c2b5;
-  --line-strong: #2e342f;
-  --accent: #334c3f;
-  --accent-2: #a33a2f;
+  --muted: #55615a;
+  --faint: #7a867f;
+  --line: #bac5be;
+  --line-strong: #2f3b34;
+  --accent: #2f5d50;
+  --accent-2: #b24a3a;
   --font-display: 'Newsreader', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-meta: 'IBM Plex Mono', 'Courier New', monospace;
@@ -62,7 +62,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   top: 0;
   z-index: 20;
   min-height: var(--header-h);
-  background: rgba(244, 240, 231, 0.92);
+  background: rgba(231, 236, 232, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
 }
@@ -85,7 +85,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   font-family: var(--font-meta);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
@@ -114,7 +114,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
 .site-social a {
   font-family: var(--font-meta);
   font-size: 0.74rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--muted);
@@ -141,13 +141,13 @@ a { color: inherit; text-underline-offset: 0.18em; }
 .experience-dates {
   font-family: var(--font-meta);
   font-size: 0.76rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .hero {
-  min-height: calc(100svh - var(--header-h));
+  min-height: calc(100svh - var(--header-h) - 96px);
   display: grid;
   align-items: center;
   padding: 56px 0;
@@ -202,7 +202,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   font-family: var(--font-meta);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -241,7 +241,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   font-family: var(--font-meta);
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -389,7 +389,7 @@ a { color: inherit; text-underline-offset: 0.18em; }
   font-size: 0.78rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
 }
 
 @media (max-width: 760px) {
