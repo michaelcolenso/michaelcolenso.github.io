@@ -5,21 +5,38 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
----
-<BaseLayout title="Blog — Michael Colenso" description="Writing by Michael Colenso.">
-  <div class="page-content">
-    <h1 class="page-title">Words</h1>
-    <p class="page-subtitle">things i have written</p>
 
-    <ul class="post-list">
-      {posts.map((post) => (
-        <li class="post-list-item">
-          <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-          <span class="post-list-date">
-            {post.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </span>
-        </li>
-      ))}
-    </ul>
+const formatPostDate = (date: Date) =>
+  date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+---
+<BaseLayout title="Writing — Michael Colenso" description="Writing by Michael Colenso on construction, software, work that lasts, and learning systems the hard way.">
+  <div class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">Writing</p>
+      <h1 class="page-title">Notes on construction, software, work that lasts, and learning systems the hard way.</h1>
+    </header>
+
+    <section class="section">
+      <ul class="post-list">
+        {posts.map((post) => (
+          <li class="post-list-item">
+            <div>
+              <span class="post-list-date">
+                {formatPostDate(post.data.date)}
+              </span>
+            </div>
+            <div>
+              <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+              {post.data.tagline && <p>{post.data.tagline}</p>}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
   </div>
 </BaseLayout>

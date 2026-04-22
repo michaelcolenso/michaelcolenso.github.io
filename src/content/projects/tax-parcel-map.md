@@ -1,6 +1,6 @@
 ---
 title: "TC Plat Map"
-tagline: "Interactive property records and tax parcel map for Traverse City, Michigan"
+tagline: "An interactive property records and tax parcel map for Traverse City, Michigan."
 link: "http://tcplatmap.herokuapp.com"
 github: "https://github.com/michaelcolenso/tcplatmap"
 image: "/assets/tax-parcel-map.png"
@@ -11,7 +11,7 @@ order: 9
 
 #### An interactive plat map for Traverse City, Michigan
 
-A moderately exciting local property records and tax parcel map for Traverse City, Michigan.
+An interactive local property records and tax parcel map for Traverse City, Michigan.
 
 Located in Michigan's "little finger", Traverse City is a lovely little town of about 15,000 year-round residents. It's really quite nice. You should visit. Lots of people do. Great food, wine, beer, lots of cherries, golf, beaches, and plenty of Midwestern hospitality.
 

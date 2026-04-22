@@ -1,6 +1,6 @@
 ---
 title: "Refract"
-tagline: "Drop a photo into a repo — AI critics from three different models tear it apart, an editor fixes it, and the result publishes itself"
+tagline: "An AI workflow that critiques, edits, documents, and publishes image work from a GitHub pipeline."
 github: "https://github.com/michaelcolenso/Refract"
 image: "/assets/refract.jpg"
 order: 3
@@ -8,7 +8,7 @@ order: 3
 
 ## A self-correcting photography log
 
-Push a photo to GitHub. That's it. Refract takes it from there.
+Push a photo to GitHub. Refract handles the review, edit, documentation, and publish steps.
 
 A GitHub Actions workflow triggers a three-stage pipeline: multiple LLMs (Claude, GPT-4o, Gemini) analyze the photo and generate critique + improvement suggestions, an AI editor applies the enhancements, and a static site generator publishes the before/after with full documentation of what changed and why.
 

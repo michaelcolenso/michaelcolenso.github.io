@@ -1,6 +1,17 @@
 ---
+import { contactCopy } from '../data/site';
+
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
-  <p>Michael Colenso &copy; {year}</p>
+  <div class="site-footer__inner">
+    <div>
+      <p class="site-footer__heading">{contactCopy.heading}</p>
+      <p class="site-footer__body">{contactCopy.body}</p>
+    </div>
+    <div class="site-footer__meta">
+      <a href={contactCopy.href} target="_blank" rel="noopener noreferrer">{contactCopy.label}</a>
+      <span>Michael Colenso &copy; {year}</span>
+    </div>
+  </div>
 </footer>

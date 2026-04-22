@@ -1,6 +1,6 @@
 ---
 title: "SeattleJoy"
-tagline: "Million dollar home sales in King County, Washington"
+tagline: "A King County home-sales map focused on million-dollar residential transactions."
 link: "http://seattlejoy.com"
 github: "https://github.com/michaelcolenso/seattlejoy"
 image: "/assets/seattlejoy.png"

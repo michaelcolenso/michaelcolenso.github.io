@@ -1,6 +1,6 @@
 ---
 title: "Praised"
-tagline: "Testimonial collection and display SaaS — beautiful forms, embeddable widget, Stripe billing"
+tagline: "A full-stack testimonial SaaS with collection forms, approval workflow, embeds, billing, and tests."
 github: "https://github.com/michaelcolenso/Praised"
 image: "/assets/praised.jpg"
 order: 2
