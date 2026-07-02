@@ -1,1 +1,114 @@
-PLACEHOLDER
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Photography — Michael Colenso"
+  description="Photographs of labor, weather, family, and the animals that accompany a life."
+  bodyClass="photography-page"
+>
+  <section class="photo-shell">
+    <p class="photo-kicker">Photography / Seattle / Labor / Weather</p>
+    <h1>Photographs from the worlds that hold.</h1>
+    <p class="photo-lede">A curated portfolio of construction, portrait, weather, and animal work. The production image build is packaged locally; this live route is the GitHub Pages entry point.</p>
+    <div class="photo-rule"></div>
+    <div class="photo-grid">
+      <article>
+        <span>01</span>
+        <h2>Above Seattle</h2>
+        <p>Construction, labor, steel, elevation, and the city being made.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Human Weather</h2>
+        <p>Portraits of care, endurance, family, private intensity, and the pressure of being seen.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Domestic Wilderness</h2>
+        <p>Animals, shorelines, snow, ferries, and the quiet companionship of domestic life meeting weather.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :global(body.photography-page) {
+    background: #0c0c0a;
+    color: #f4f0e7;
+  }
+
+  .photo-shell {
+    min-height: calc(100vh - 72px);
+    padding: clamp(7rem, 11vw, 12rem) clamp(1.25rem, 5vw, 6rem);
+    background:
+      radial-gradient(circle at 18% 20%, rgba(216, 180, 107, .18), transparent 26rem),
+      linear-gradient(135deg, #0c0c0a, #15130f 52%, #080806);
+  }
+
+  .photo-kicker {
+    color: #d8b46b;
+    font-size: .75rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    margin: 0 0 1.25rem;
+  }
+
+  h1 {
+    max-width: 980px;
+    margin: 0;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(4rem, 10vw, 11rem);
+    line-height: .9;
+    letter-spacing: -.055em;
+  }
+
+  .photo-lede {
+    max-width: 760px;
+    margin: 2rem 0 0;
+    color: #ada394;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  }
+
+  .photo-rule {
+    height: 1px;
+    background: rgba(244, 240, 231, .18);
+    margin: clamp(3rem, 6vw, 6rem) 0 2rem;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  article {
+    border: 1px solid rgba(244, 240, 231, .16);
+    background: rgba(244, 240, 231, .045);
+    padding: clamp(1.5rem, 3vw, 2.4rem);
+    min-height: 260px;
+  }
+
+  article span {
+    color: #d8b46b;
+    letter-spacing: .2em;
+    font-size: .75rem;
+  }
+
+  article h2 {
+    margin: 2rem 0 1rem;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 3vw, 3.3rem);
+    letter-spacing: -.04em;
+  }
+
+  article p {
+    color: #ada394;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 800px) {
+    .photo-grid { grid-template-columns: 1fr; }
+  }
+</style>
