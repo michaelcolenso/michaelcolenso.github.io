@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Personal site (`blog.michaelcolenso.com`) built with Astro 4, static output, deployed to GitHub Pages via GitHub Actions on push to `master`.
+Personal site (`michaelcolenso.com`) built with Astro 4, static output, deployed to GitHub Pages via GitHub Actions on push to `master`.
 
 ## Commands
 
@@ -18,7 +18,7 @@ npm run preview   # Preview the dist/ build locally
 
 **Astro site structure:**
 
-- `astro.config.mjs` — Config: `site: 'https://blog.michaelcolenso.com'`, `output: 'static'`
+- `astro.config.mjs` — Config: `site: 'https://michaelcolenso.com'`, `output: 'static'`
 - `src/layouts/BaseLayout.astro` — Root layout: `<head>` with OG tags/canonical URL, wraps `<Header>`, `<main><slot /></main>`, `<Footer>`
 - `src/components/` — `Header.astro`, `Footer.astro`
 - `src/pages/` — File-based routing: `index.astro`, `about.astro`, `blog/index.astro`, `blog/[slug].astro`, `projects/index.astro`, `projects/[slug].astro`

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Redesign and update `blog.michaelcolenso.com` so it positions Michael Colenso as a construction-first operator with serious software and AI capability. The site should build general credibility for construction executives and owners without reading like a sales page or making a hard pitch.
+Redesign and update `michaelcolenso.com` so it positions Michael Colenso as a construction-first operator with serious software and AI capability. The site should build general credibility for construction executives and owners without reading like a sales page or making a hard pitch.
 
 The primary reader is a construction executive or owner. Secondary readers include construction-tech or AI companies, potential clients with messy construction technology problems, and peers who are interested in the writing or projects.
 
