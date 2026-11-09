@@ -32,28 +32,28 @@ export const operatingProof = [
   },
 ] as const;
 
-export const selectedProjectSlugs = ['regsignal', 'refract', 'praised'] as const;
+export const selectedProjectSlugs = ['building-seattle', 'blender-models', 'recalled-rides'] as const;
 
 export const selectedProjectNotes: Record<string, string> = {
-  regsignal: 'Construction-domain intelligence for tracking how regulation turns into local cost and schedule risk.',
-  refract: 'A multi-model AI pipeline that critiques, edits, documents, and publishes image work from a GitHub workflow.',
-  praised: 'A full-stack SaaS build with collection forms, review workflow, embeddable widgets, auth, billing, and tests.',
+  'building-seattle': 'A live Seattle SDCI permit database with search, REST/OpenAPI, and a public MCP endpoint.',
+  'blender-models': 'Spec-driven Blender VDC for occupied restoration work, with provenance checks and review renders.',
+  'recalled-rides': 'Cloudflare vehicle-recall search with LLM enrichment and a public read-only MCP server.',
 };
 
 export const projectGroups = [
   {
     title: 'Construction, Data, And Regulation',
     description: 'Maps, signals, and public-data tools tied to places, policy, property, and enforcement.',
-    slugs: ['regsignal', 'guns', 'seattlejoy', 'tax-parcel-map'],
+    slugs: ['building-seattle', 'regsignal', 'guns', 'seattlejoy', 'tax-parcel-map'],
   },
   {
     title: 'AI And Automation',
     description: 'Systems that use models, scripts, and pipelines to reduce repetitive judgment work.',
-    slugs: ['refract', 'cull-the-herd', 'golfcoach', 'maptoposter'],
+    slugs: ['blender-models', 'refract', 'cull-the-herd', 'golfcoach', 'maptoposter'],
   },
   {
     title: 'Product Builds',
     description: 'Full product surfaces with accounts, workflows, embeds, billing, and deployment concerns.',
-    slugs: ['praised'],
+    slugs: ['recalled-rides', 'praised'],
   },
 ] as const;
